@@ -26,6 +26,8 @@ private:
 	ofBoxPrimitive Box;
 	float BoxHeight = 100;
 	float BoxWidth = 100;
-	float BoxDepth = 0;
+	float BoxDepth = 100;
+
+	ofColor randColor[6] = { ofColor::aqua, ofColor::orangeRed, ofColor::forestGreen, ofColor::purple, ofColor::whiteSmoke, ofColor::indigo };
 		
 };

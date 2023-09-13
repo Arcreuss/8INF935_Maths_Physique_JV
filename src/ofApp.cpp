@@ -4,7 +4,9 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+	Vector3D vectorR(15,15,15,0);
 	Box.set(BoxHeight, BoxWidth, BoxDepth);
+	Box.setGlobalOrientation(Vector3D::ConvertVect(vectorR));
 }
 
 //--------------------------------------------------------------
@@ -14,12 +16,14 @@ void ofApp::update(){
 	Vector3D test(vectorD + vectorIni);
 	std::cout << test.getVectorX() << endl;
 	Box.setPosition(Vector3D::ConvertVect(test));
+	Box.rotate(Box.getOrientationQuat().x, Vector3D::ConvertVect(test));
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	Box.setSideColor(3, ofColor::aqua);
-
+	for (int i = 0; i < 6; i++) {
+		Box.setSideColor(i, randColor[i]);
+	}
 	Box.draw();
 }
 
